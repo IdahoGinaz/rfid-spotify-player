@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rfid-spotify-player"
+version = "0.1.0"
+description = "Tap an RFID card on a Raspberry Pi to play Spotify through a Bluetooth speaker"
+requires-python = ">=3.9"
+dependencies = [
+  "websocket-client>=1.6",
+  "flask>=3",
+  "mfrc522>=0.0.7",
+  "spidev",
+    "rpi-lgpio",
+]
+
+[project.scripts]
+rfid-player = "rfid_player.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

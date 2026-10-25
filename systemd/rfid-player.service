@@ -1,0 +1,15 @@
+[Unit]
+Description=RFID Spotify player
+After=network-online.target bluetooth.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jukebox
+EnvironmentFile=/etc/rfid-player.env
+ExecStart=/home/jukebox/rfid-spotify-player/.venv/bin/rfid-player run
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

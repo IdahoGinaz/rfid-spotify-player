@@ -1,0 +1,10 @@
+[Unit]
+Description=Check for a new Spotify Soloist build daily
+
+[Timer]
+OnCalendar=*-*-* 04:00:00
+RandomizedDelaySec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
