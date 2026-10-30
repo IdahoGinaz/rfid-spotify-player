@@ -6,6 +6,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 User=jukebox
+WorkingDirectory=/home/jukebox/rfid-spotify-player
 EnvironmentFile=/etc/rfid-player.env
 ExecStart=/home/jukebox/rfid-spotify-player/.venv/bin/rfid-player run
 Restart=always
