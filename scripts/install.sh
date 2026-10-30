@@ -22,5 +22,6 @@ for f in rfid-player rfid-web; do
     systemd/$f.service | sudo tee /etc/systemd/system/$f.service >/dev/null
 done
 sudo systemctl daemon-reload
+sudo systemctl enable rfid-player rfid-web
 
 echo "Done. Follow docs/setup.md to install Spotify Soloist and pair it."
