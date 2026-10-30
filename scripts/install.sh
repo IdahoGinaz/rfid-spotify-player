@@ -14,7 +14,7 @@ python3 -m venv .venv
 .venv/bin/pip install -e .
 # mfrc522 pulls in the old RPi.GPIO; swap it for the rpi-lgpio shim
 .venv/bin/pip uninstall -y RPi.GPIO
-.venv/bin/pip install rpi-lgpio
+.venv/bin/pip install --force-reinstall --no-deps rpi-lgpio
 
 [ -f /etc/rfid-player.env ] || sudo install -m 600 .env.example /etc/rfid-player.env
 for f in rfid-player rfid-web; do
